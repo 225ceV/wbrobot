@@ -31,7 +31,7 @@ class online_lqr_node:
         self.server = rospy.Service('/lqr_gain', Gain, self.gainCallBack)
         rospy.loginfo("LQR Optimizer Node is Online...")
         
-
+        rospy.spin()
 
     def update_system(self, l):
         # 在高度信息变化时更新系统矩阵
@@ -73,4 +73,3 @@ class online_lqr_node:
 if __name__ == "__main__":
     lqr_node = online_lqr_node()
     # print(lqr_node.gainCallBack(0.04))
-    rospy.spin()

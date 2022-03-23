@@ -8,8 +8,8 @@
 <!--gazebo-->
     <include file="$(find robot_description)/launch/my_world.launch" />
     <!--添加机器人模型-->
-    <!--node name="model_gzb" pkg="gazebo_ros" type="spawn_model" 
-    args="-urdf -model bot_model -param robot_description" /-->
+    <node name="model_gzb" pkg="gazebo_ros" type="spawn_model" 
+    args="-urdf -model bot_model -param robot_description" />
     <!--发布机器人关节的tf话题，由rviz订阅-->
     <!--node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
         <param name="publish_frequency" type="double" value="30.0" />

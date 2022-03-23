@@ -1,8 +1,8 @@
 <launch>
-<!-- include file="$(find robot_description)/launch/gazebo_sim.launch"/-->
-<node name="online_lqr" pkg="robot_control" type="online_lqr.py"/>
+<!-- include file="$(find robot_description)/launch/gazebo_sim.launch"/ -->
+<node name="online_lqr" pkg="robot_control" type="online_lqr.py" output="screen"/>
 <node name="imu_do" pkg="robot_control" type="imu_do_node.py"/>
 <node name="multi_receive" pkg="robot_control" type="multi_receive.py"/>
-<node name="control" pkg="robot_control" type="lqr_control1.py"/>
+<node name="control" pkg="robot_control" type="lqr_control1.py" output="screen"/>
 
 </launch>
