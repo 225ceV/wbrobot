@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="rosbot3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find balance_car_description)/urdf/rosbot3.xacro" />
+    <xacro:include filename="$(find balance_car_description)/urdf/sensor/imu.xacro" />
+    <xacro:imu_sensor fix_link="base_link"/>
+</robot>

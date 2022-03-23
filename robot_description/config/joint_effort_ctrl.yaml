@@ -1,0 +1,4 @@
+type: "effort_controllers/JointGroupEffortController"
+joints: 
+ - wheel1_joint
+ - wheel2_joint

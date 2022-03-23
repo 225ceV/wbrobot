@@ -1,0 +1,7 @@
+type: "position_controllers/JointGroupPositionController"
+joints: 
+ - datui1_joint
+ - xiaotui1_joint
+ - datui2_joint
+ - xiaotui2_joint
+

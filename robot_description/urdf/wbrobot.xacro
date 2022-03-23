@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="rosbot3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="world_link" >
+    <visual>
+        <geometry>
+            <box size = "0.01 0.01 0.01" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="yellow">
+            <color rgba="0.5 0.3 0 0.5"/>
+        </material>
+    </visual>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.5843E-17 -0.0018258 -0.00076631"
+        rpy="0 0 0" />
+      <mass
+        value="8" />
+      <inertia
+        ixx="0.052838"
+        ixy="0"
+        ixz="0"
+        iyy="0.04905"
+        iyz="-0.0011035"
+        izz="0.055787" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!--world_joint-->
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0 0 0.15"/>
+    <parent link="world_link"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link
+    name="datui1_Link">
+    <inertial>
+      <origin
+        xyz="0.015766 -0.072335 -3.2958E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.090996" />
+      <inertia
+        ixx="0.00063669"
+        ixy="5.1817E-06"
+        ixz="0"
+        iyy="3.9867E-05"
+        iyz="-1.7891E-06"
+        izz="0.00062095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/datui1_Link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/datui1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="datui1_joint"
+    type="revolute">
+    <origin
+      xyz="-0.08 0 0"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="datui1_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="xiaotui1_Link">
+    <inertial>
+      <origin
+        xyz="-0.010009 -0.087975 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.089561" />
+      <inertia
+        ixx="0.00045806"
+        ixy="1.3763E-07"
+        ixz="0"
+        iyy="1.4234E-05"
+        iyz="0"
+        izz="0.00045351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/xiaotui1_Link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/xiaotui1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="xiaotui1_joint"
+    type="revolute">
+    <origin
+      xyz="0.005 -0.21 0"
+      rpy="-0.43633 0 3.1416" />
+    <parent
+      link="datui1_Link" />
+    <child
+      link="xiaotui1_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="wheel1_Link">
+    <inertial>
+      <origin
+        xyz="-0.033743 -4.0891E-11 -1.451E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.10249" />
+      <inertia
+        ixx="0.00015426"
+        ixy="0"
+        ixz="0"
+        iyy="8.0659E-05"
+        iyz="0"
+        izz="8.066E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/wheel1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/wheel1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel1_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.21 0"
+      rpy="-1.1611 0 0" />
+    <parent
+      link="xiaotui1_Link" />
+    <child
+      link="wheel1_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="datui2_Link">
+    <inertial>
+      <origin
+        xyz="0.015766 -0.072335 -3.296E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.090996" />
+      <inertia
+        ixx="0.00063669"
+        ixy="5.18E-06"
+        ixz="0"
+        iyy="3.987E-05"
+        iyz="-1.79E-06"
+        izz="0.00062095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/datui2_Link.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/datui2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="datui2_joint"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="datui2_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="xiaotui2_Link">
+    <inertial>
+      <origin
+        xyz="-0.010009 -0.087975 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.089561" />
+      <inertia
+        ixx="0.00045806"
+        ixy="1.3763E-07"
+        ixz="0"
+        iyy="1.4234E-05"
+        iyz="0"
+        izz="0.00045351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/xiaotui2_Link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/xiaotui2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="xiaotui2_joint"
+    type="revolute">
+    <origin
+      xyz="0.005 -0.21 0"
+      rpy="0.43633 0 3.1416" />
+    <parent
+      link="datui2_Link" />
+    <child
+      link="xiaotui2_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="wheel2_Link">
+    <inertial>
+      <origin
+        xyz="-0.033743 -4.089E-11 -1.451E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.10249" />
+      <inertia
+        ixx="0.00015426"
+        ixy="0"
+        ixz="0"
+        iyy="8.0659E-05"
+        iyz="0"
+        izz="8.066E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/wheel2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rosbot3/meshes/wheel2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel2_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.21 0"
+      rpy="-1.9805 0 0" />
+    <parent
+      link="xiaotui2_Link" />
+    <child
+      link="wheel2_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="200"
+      velocity="20" />
+  </joint>
+  <!--传动-->
+  <transmission name="datui1_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="datui1_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$datui1_joint_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="xiaotui1_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="xiaotui1_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$xiaotui1_joint_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel1_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel1_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wheel1_joint_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="datui2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="datui2_joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$datui2_joint_motor">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="xiaotui2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="xiaotui2_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$xiaotui2_joint_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel2_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wheel2_joint_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!--Gazebo Plugin for ROS Control-->
+  <!--This allows for other ROS to interact with 
+      Gazebo in a generic way.-->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+</robot>

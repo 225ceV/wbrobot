@@ -1,0 +1,938 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='Untitled'>
+      <pose>-0.3 -1.49 0 0 -0 0</pose>
+      <link name='Wall_0'>
+        <collision name='Wall_0_Collision'>
+          <geometry>
+            <box>
+              <size>6.25 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_0_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>6.25 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>-0 -1.8 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_1'>
+        <collision name='Wall_1_Collision'>
+          <geometry>
+            <box>
+              <size>3.75 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_1_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.75 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>3.05 0 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_3'>
+        <collision name='Wall_3_Collision'>
+          <geometry>
+            <box>
+              <size>3.75 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_3_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.75 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>-3.05 0 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='cafe_table'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='surface'>
+          <pose>0 0 0.755 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.913 0.913 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='column'>
+          <pose>0 0 0.37 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.042 0.042 0.74</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.02 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.56 0.56 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.945277 -1.66955 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>129 586000000</sim_time>
+      <real_time>36 297501115</real_time>
+      <wall_time>1647908360 759700829</wall_time>
+      <iterations>35278</iterations>
+      <model name='Untitled'>
+        <pose>-0.3 -1.49 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Wall_0'>
+          <pose>-0.3 -3.29 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_1'>
+          <pose>2.75 -1.49 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_3'>
+          <pose>-3.35 -1.49 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='bot_model'>
+        <pose>-0.445148 -2.98625 0.01075 -0.023269 0.000519 0.038962</pose>
+        <scale>1 1 1</scale>
+        <link name='datui1_Link'>
+          <pose>-0.525136 -2.98634 0.140839 2.97313 -0.001439 -3.10238</pose>
+          <velocity>0.00453 0.018142 0.039686 0.611132 0.124209 -0.155931</velocity>
+          <acceleration>-13.5716 14.5707 21.129 1.05728 0.335089 1.65278</acceleration>
+          <wrench>-1.23496 1.32587 1.92266 0 -0 0</wrench>
+        </link>
+        <link name='datui2_Link'>
+          <pose>-0.365258 -2.98012 0.140719 0.168416 0.001361 0.038956</pose>
+          <velocity>0.004123 0.005048 0.007721 0.563791 0.80089 -0.076475</velocity>
+          <acceleration>-17.8827 -3.97235 -25.007 -3.09007 -0.344281 0.865359</acceleration>
+          <wrench>-1.62726 -0.361468 -2.27554 0 -0 0</wrench>
+        </link>
+        <link name='wheel1_Link'>
+          <pose>-0.529912 -2.99121 0.04989 -0.015225 0.00125 0.03792</pose>
+          <velocity>-0.013336 0.076456 0.018949 -1.52172 -0.267273 0.015683</velocity>
+          <acceleration>-59.0699 26.507 -27.8135 -1.67159 1.11216 2.30013</acceleration>
+          <wrench>-6.05408 2.71671 -2.8506 0 -0 0</wrench>
+        </link>
+        <link name='wheel2_Link'>
+          <pose>-0.360297 -2.98438 0.050572 1.63652 4.6e-05 -3.1012</pose>
+          <velocity>-0.058427 0.038908 0.088038 -0.730278 -1.38391 0.43325</velocity>
+          <acceleration>-124.378 41.1093 364.289 0.861819 -0.359272 2.68922</acceleration>
+          <wrench>-12.7475 4.21329 37.336 0 -0 0</wrench>
+        </link>
+        <link name='world_link'>
+          <pose>-0.445148 -2.98625 0.01075 -0.023269 0.000519 0.038962</pose>
+          <velocity>-0.050628 0.082853 0.014899 0.540864 0.416698 -0.074399</velocity>
+          <acceleration>4.25535 5.90576 10.1152 -0.767958 0.09181 3.03823</acceleration>
+          <wrench>34.0428 47.246 80.9216 0 -0 0</wrench>
+        </link>
+        <link name='xiaotui1_Link'>
+          <pose>-0.522059 -3.19341 0.105903 2.87119 0.003569 0.037845</pose>
+          <velocity>-0.027236 0.04021 -0.109938 0.671091 -0.345176 0.025576</velocity>
+          <acceleration>-50.7145 19.695 -57.4691 2.75795 -0.005075 1.11921</acceleration>
+          <wrench>-4.54204 1.7639 -5.14699 0 -0 0</wrench>
+        </link>
+        <link name='xiaotui2_Link'>
+          <pose>-0.352265 -3.18675 0.105943 0.267887 -0.00379 -3.103</pose>
+          <velocity>-0.038814 0.040227 0.034745 -0.131698 1.18065 -0.219755</velocity>
+          <acceleration>-88.8272 15.3112 229.097 -3.0185 -0.066067 0.752636</acceleration>
+          <wrench>-7.95545 1.37129 20.5182 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cafe_table'>
+        <pose>0.945277 -1.66955 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.945277 -1.66955 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-2.21565 2.47873 1.70953 0 0.571643 -1.06381</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='bot_model'>
+      <link name='world_link'>
+        <inertial>
+          <pose>-0 -0.001826 0.129234 0 -0 0</pose>
+          <mass>8</mass>
+          <inertia>
+            <ixx>0.052838</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.04905</iyy>
+            <iyz>-0.0011035</iyz>
+            <izz>0.055787</izz>
+          </inertia>
+        </inertial>
+        <collision name='world_link_fixed_joint_lump__base_link_collision'>
+          <pose>0 0 0.13 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='world_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.01</size>
+            </box>
+          </geometry>
+        </visual>
+        <visual name='world_link_fixed_joint_lump__base_link_visual_1'>
+          <pose>0 0 0.13 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='datui1_joint' type='revolute'>
+        <pose relative_to='world_link'>-0.08 0 0.13 3.14159 -0 -3.14159</pose>
+        <parent>world_link</parent>
+        <child>datui1_Link</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>3.14</upper>
+            <effort>200</effort>
+            <velocity>20</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='datui1_Link'>
+        <pose relative_to='datui1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.015766 -0.072335 -3.3e-05 0 -0 0</pose>
+          <mass>0.090996</mass>
+          <inertia>
+            <ixx>0.00063669</ixx>
+            <ixy>5.1817e-06</ixy>
+            <ixz>0</ixz>
+            <iyy>3.9867e-05</iyy>
+            <iyz>-1.7891e-06</iyz>
+            <izz>0.00062095</izz>
+          </inertia>
+        </inertial>
+        <collision name='datui1_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/datui1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='datui1_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/datui1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='xiaotui1_joint' type='revolute'>
+        <pose relative_to='datui1_Link'>0.005 -0.21 0 -0.43633 -0 -3.14159</pose>
+        <parent>datui1_Link</parent>
+        <child>xiaotui1_Link</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>3.14</upper>
+            <effort>200</effort>
+            <velocity>20</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='xiaotui1_Link'>
+        <pose relative_to='xiaotui1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.010009 -0.087975 0 0 -0 0</pose>
+          <mass>0.089561</mass>
+          <inertia>
+            <ixx>0.00045806</ixx>
+            <ixy>1.3763e-07</ixy>
+            <ixz>0</ixz>
+            <iyy>1.4234e-05</iyy>
+            <iyz>0</iyz>
+            <izz>0.00045351</izz>
+          </inertia>
+        </inertial>
+        <collision name='xiaotui1_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/xiaotui1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='xiaotui1_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/xiaotui1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='wheel1_joint' type='revolute'>
+        <pose relative_to='xiaotui1_Link'>0 -0.21 0 -1.1611 0 0</pose>
+        <parent>xiaotui1_Link</parent>
+        <child>wheel1_Link</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <effort>200</effort>
+            <velocity>20</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>0.05</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel1_Link'>
+        <pose relative_to='wheel1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.033743 -0 -0 0 -0 0</pose>
+          <mass>0.10249</mass>
+          <inertia>
+            <ixx>0.00015426</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>8.0659e-05</iyy>
+            <iyz>0</iyz>
+            <izz>8.066e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel1_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/wheel1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu2>100</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel1_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/wheel1_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='datui2_joint' type='revolute'>
+        <pose relative_to='world_link'>0.08 0 0.13 0 -0 0</pose>
+        <parent>world_link</parent>
+        <child>datui2_Link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>3.14</upper>
+            <effort>200</effort>
+            <velocity>20</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='datui2_Link'>
+        <pose relative_to='datui2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.015766 -0.072335 -3.3e-05 0 -0 0</pose>
+          <mass>0.090996</mass>
+          <inertia>
+            <ixx>0.00063669</ixx>
+            <ixy>5.18e-06</ixy>
+            <ixz>0</ixz>
+            <iyy>3.987e-05</iyy>
+            <iyz>-1.79e-06</iyz>
+            <izz>0.00062095</izz>
+          </inertia>
+        </inertial>
+        <collision name='datui2_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/datui2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='datui2_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/datui2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='xiaotui2_joint' type='revolute'>
+        <pose relative_to='datui2_Link'>0.005 -0.21 0 0.43633 -0 -3.14159</pose>
+        <parent>datui2_Link</parent>
+        <child>xiaotui2_Link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>3.14</upper>
+            <effort>200</effort>
+            <velocity>20</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='xiaotui2_Link'>
+        <pose relative_to='xiaotui2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.010009 -0.087975 0 0 -0 0</pose>
+          <mass>0.089561</mass>
+          <inertia>
+            <ixx>0.00045806</ixx>
+            <ixy>1.3763e-07</ixy>
+            <ixz>0</ixz>
+            <iyy>1.4234e-05</iyy>
+            <iyz>0</iyz>
+            <izz>0.00045351</izz>
+          </inertia>
+        </inertial>
+        <collision name='xiaotui2_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/xiaotui2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='xiaotui2_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/xiaotui2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='wheel2_joint' type='revolute'>
+        <pose relative_to='xiaotui2_Link'>0 -0.21 0 -1.9805 0 0</pose>
+        <parent>xiaotui2_Link</parent>
+        <child>wheel2_Link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>200</effort>
+            <velocity>20</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>0.05</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel2_Link'>
+        <pose relative_to='wheel2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.033743 -0 -0 0 -0 0</pose>
+          <mass>0.10249</mass>
+          <inertia>
+            <ixx>0.00015426</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>8.0659e-05</iyy>
+            <iyz>0</iyz>
+            <izz>8.066e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel2_Link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/wheel2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu2>100</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel2_Link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/jjk/wbrobot_ws/src/robot_description/meshes/wheel2_Link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='imu_plugin' filename='libgazebo_ros_imu.so'>
+        <alwaysOn>1</alwaysOn>
+        <topicName>imu</topicName>
+        <serviceName>imu_service</serviceName>
+        <gaussianNoise>0.0</gaussianNoise>
+        <updateRate>800</updateRate>
+        <robotNamespace>/</robotNamespace>
+        <bodyName>world_link</bodyName>
+        <xyzOffset>0 0 -0.13</xyzOffset>
+        <rpyOffset>0 -0 0</rpyOffset>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>

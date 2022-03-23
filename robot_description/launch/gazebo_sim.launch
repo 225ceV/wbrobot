@@ -1,0 +1,32 @@
+<launch>
+<!--在参数服务器中载入urdf-->
+    <param name="robot_description" textfile="$(find robot_description)/urdf/wbrobot.urdf"/>
+<!--rviz-->
+    <!--node name="rviz" pkg="rviz" type="rviz" 
+    args="-d $(find robot_description)/config/bot_rvizconfig.rviz" /-->
+    
+<!--gazebo-->
+    <include file="$(find robot_description)/launch/my_world.launch" />
+    <!--添加机器人模型-->
+    <!--node name="model_gzb" pkg="gazebo_ros" type="spawn_model" 
+    args="-urdf -model bot_model -param robot_description" /-->
+    <!--发布机器人关节的tf话题，由rviz订阅-->
+    <!--node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="30.0" />
+    </node-->   
+
+<!--Ctrl-->
+    <rosparam command="load"
+            file = "$(find robot_description)/config/joint_tf.yaml"
+            ns = "bot_joint_state_controller" />
+    <rosparam command = "load"
+            file ="$(find robot_description)/config/joint_effort_ctrl.yaml"
+            ns ="joints_effort_controller" />
+    <rosparam command = "load"
+            file ="$(find robot_description)/config/joint_position_ctrl.yaml"
+            ns ="joints_position_controller" />
+    <node name = "bot_controller_spawner" pkg="controller_manager" type="spawner"
+    args = "bot_joint_state_controller
+            joints_effort_controller
+            joints_position_controller"/>
+</launch>
