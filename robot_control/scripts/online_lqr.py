@@ -22,6 +22,7 @@ class online_lqr_node:
 
         # lqr权重值
         self.Qv = np.diag([50, 1, 12])
+        # self.Qv = np.diag([50, 0, 0])
         self.Rv = np.diag([1])
         self.Qdelta = np.diag([10, 1])
         self.Rdelta = np.diag([1])
@@ -50,6 +51,8 @@ class online_lqr_node:
                            [0, 0]])
         Bdelta = np.array([[                                        0], 
                            [(D*R)/(m*D**2*R**2 + Jw*D**2 + 2*Jb*R**2)]])
+        print(Adelta)
+        print(Bdelta)
         self.sys_v = ss(Av, Bv, np.eye(3), np.zeros((3,1)))
         self.sys_delta = ss(Adelta, Bdelta, np.eye(2), np.zeros((2,1)))
 
@@ -62,6 +65,7 @@ class online_lqr_node:
         res = GainResponse()
         res.K = Kv.flatten().tolist() + Kdelta.flatten().tolist()
         # res = (Kv.flatten().tolist() + Kdelta.flatten().tolist())
+        print(res.K)
         return res
 
 

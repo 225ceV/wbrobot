@@ -29,10 +29,10 @@ class multi_receive_node:
         
         info = multi_info()
         info.dx=0.5*(dx1+dx2)
-        info.pitch = ro.pitch
-        info.dpitch = ro.dpitch
-        info.yaw = ro.yaw
-        info.dyaw = ro.dyaw
+        info.theta = ro.theta
+        info.dtheta = ro.dtheta
+        info.delta = ro.delta
+        info.ddelta = ro.ddelta
         # 时间戳
         info.header.stamp = rospy.Time.now()
         self.pub.publish(info)

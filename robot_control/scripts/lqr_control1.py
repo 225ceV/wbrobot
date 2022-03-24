@@ -21,15 +21,15 @@ class v_control_node:
 
 
     def callback(self, md):
-        x_vec1=np.array([[md.dx],[md.pitch],[md.dpitch]])
-        x_vec2=np.array([[md.yaw],[md.dyaw]])
+        x_vec1=np.array([[md.dx],[md.theta],[md.dtheta]])
+        x_vec2=np.array([[md.delta],[md.ddelta]])
         u1=-k1.dot(x_vec1 - np.array([[v],[0],[0]]))
         u2=-k2.dot(x_vec2 - np.array([[delta], [0]]))
         # u1=-k1.dot(x_vec1) + g1.dot(np.array([[v], [0], [0]]))
         # u2=-k2.dot(x_vec2) + g2.dot(np.array([[delta], [0]]))
         Cl=0.5*u1+0.5*u2
         Cr=0.5*u1-0.5*u2
-        if np.abs(md.pitch) > np.pi/3:
+        if np.abs(md.theta) > np.pi/3:
             Cl = 0
             Cr = 0
         C=Float64MultiArray(data=[Cl,Cr])
@@ -58,19 +58,8 @@ if __name__=='__main__':
     g1 = np.array(response.G[0:3])
     # k1[0] = 0
     g2 = np.array(response.G[3:])
-    print(k1)
 
-    v = 0.5
+    v = 0.095
     delta = 0
     v_controller = v_control_node()
-
-
-    du5 = rospy.Duration(5)
-    rospy.sleep(du5)
-
-    req.l = 0.08
-    L = req.l
-    response = client.call(req)
-    k1 = np.array(response.K[0:3])
-    # k1[0] = 0
-    k2 = np.array(response.K[3:])
+    rospy.spin()

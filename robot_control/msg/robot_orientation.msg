@@ -1,5 +1,5 @@
 Header header
-float64 pitch
-float64 dpitch
-float64 yaw
-float64 dyaw
+float64 theta
+float64 dtheta
+float64 delta
+float64 ddelta
