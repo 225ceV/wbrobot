@@ -6,6 +6,7 @@ import message_filters
 from robot_control.msg import robot_orientation
 from robot_control.msg import multi_info
 from sensor_msgs.msg import JointState
+from robot_control.msg import cmd
 
 class multi_receive_node:
     def __init__(self):
@@ -13,13 +14,14 @@ class multi_receive_node:
         # sys_k_sub = message_filters.Subscriber('/sys_K', system_K)
         robot_orientation_sub = message_filters.Subscriber('/orientation', robot_orientation)
         joint_state_sub = message_filters.Subscriber("/joint_states",JointState)
+        cmd_sub = message_filters.Subscriber('/cmd', cmd)
         self.pub = rospy.Publisher('/multi_info', multi_info, queue_size=1)
         # 时间序列处理
-        self.ts = message_filters.ApproximateTimeSynchronizer([joint_state_sub, robot_orientation_sub], 1, 0.1)
+        self.ts = message_filters.ApproximateTimeSynchronizer([joint_state_sub, robot_orientation_sub, cmd_sub], 1, 0.1)
 
         self.ts.registerCallback(self.callback)
         rospy.spin()
-    def callback(self, js, ro):
+    def callback(self, js, ro, c):
         # print('ok') 
         # x1=js.position[2]
         # x2=js.position[3]
@@ -33,6 +35,8 @@ class multi_receive_node:
         info.dtheta = ro.dtheta
         info.delta = ro.delta
         info.ddelta = ro.ddelta
+        info.cmd_v = c.cmd_v
+        info.cmd_delta = c.cmd_delta
         # 时间戳
         info.header.stamp = rospy.Time.now()
         self.pub.publish(info)

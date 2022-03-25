@@ -23,7 +23,8 @@ add_message_files(
         FILES
         robot_orientation.msg
         multi_info.msg
-        system_K.msg)
+        system_K.msg
+        cmd.msg)
 generate_messages(
         DEPENDENCIES
         std_msgs

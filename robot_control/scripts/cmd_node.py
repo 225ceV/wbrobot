@@ -13,6 +13,7 @@ class cmd_node:
         cmd_msg.cmd_delta = delta
         start = rospy.Time.now()
         while rospy.Time.now() < start + rospy.Duration(duration):
+            cmd_msg.header.stamp = rospy.Time.now()
             self.pub.publish(cmd_msg)
             self.rate.sleep()
     def stand(self, duration):
@@ -21,6 +22,7 @@ class cmd_node:
         cmd_msg.cmd_delta = 0
         start = rospy.Time.now()
         while rospy.Time.now() < start + rospy.Duration(duration):
+            cmd_msg.header.stamp = rospy.Time.now()
             self.pub.publish(cmd_msg)
             self.rate.sleep()
 if __name__ == "__main__":

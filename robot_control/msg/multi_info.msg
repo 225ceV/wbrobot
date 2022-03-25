@@ -4,3 +4,5 @@ float64 theta
 float64 dtheta
 float64 delta
 float64 ddelta
+float64 cmd_v
+float64 cmd_delta
