@@ -31,8 +31,17 @@ class imu_do_node:
         
         o.dtheta=-imu_data.angular_velocity.x
         o.ddelta=-imu_data.angular_velocity.z'''
+        x = imu_data.orientation.x
+        y = imu_data.orientation.y
+        z = imu_data.orientation.z
+        w = imu_data.orientation.w
 
-        x = float(imu_data.orientation.x) #q1
+        o.theta = - math.atan2(2 * (w * x + y * z), 1 - 2 * (x**2 + y**2))
+        o.delta = - math.atan2(2 * (w * z + x * y), 1 - 2 * (y**2 + z**2))
+        o.dtheta=-imu_data.angular_velocity.x
+        o.ddelta=-imu_data.angular_velocity.z
+
+        """x = float(imu_data.orientation.x) #q1
         y = float(imu_data.orientation.y) #q2
         z = float(imu_data.orientation.z) #q3
         w = float(imu_data.orientation.w) #q0
@@ -55,7 +64,7 @@ class imu_do_node:
         wb = R.T.dot(ws)
 
         o.dtheta = -wb[0,0]
-        o.ddelta = -wb[2,0]
+        o.ddelta = -wb[2,0]"""
         # rospy.loginfo(o.dtheta)
         # 时间戳
         o.header.stamp = rospy.Time.now()
