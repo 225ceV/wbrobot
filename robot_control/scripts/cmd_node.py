@@ -39,10 +39,14 @@ class cmd_node:
             self.rate.sleep()
 if __name__ == "__main__":
     cmd_pub = cmd_node()
-    cmd_pub.stand(5)
+    '''cmd_pub.stand(5)
     cmd_pub.move(0.2, 0, 3)
     cmd_pub.move(0.5, 0, 3)
     cmd_pub.move(0.5, 0.2, 10)
     
     # cmd_pub.check(0.5, 20, 10)
-    cmd_pub.move(0.5, 0, 3)
+    cmd_pub.move(0.5, 0, 3)'''
+    while not rospy.is_shutdown():
+        tv = rospy.get_param('tv', 0) # 键盘接受节点生成
+        rv = rospy.get_param('rv', 0)
+        cmd_pub.move(tv, rv, 0.1)
