@@ -6,3 +6,4 @@ float64 delta
 float64 ddelta
 float64 cmd_v
 float64 cmd_delta
+float64 cmd_ddelta

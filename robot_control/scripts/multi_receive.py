@@ -37,6 +37,7 @@ class multi_receive_node:
         info.ddelta = ro.ddelta
         info.cmd_v = c.cmd_v
         info.cmd_delta = c.cmd_delta
+        info.cmd_ddelta = c.cmd_ddelta
         # 时间戳
         info.header.stamp = rospy.Time.now()
         self.pub.publish(info)

@@ -24,7 +24,11 @@ class v_control_node:
         x_vec1=np.array([[md.dx],[md.theta],[md.dtheta]])
         x_vec2=np.array([[md.delta],[md.ddelta]])
         u1=-k1.dot(x_vec1 - np.array([[md.cmd_v],[0],[0]]))
-        u2=-k2.dot(x_vec2 - np.array([[md.cmd_delta], [0]]))
+        '''if md.cmd_ddelta == 0:
+            u2=-k2.dot(x_vec2 - np.array([[md.cmd_delta], [0]]))
+        else:
+            u2=-1.024*(md.ddelta - md.cmd_ddelta)'''   # cmd_node.check
+        u2=-1.024*(md.ddelta - md.cmd_ddelta)
         # u1=-k1.dot(x_vec1) + g1.dot(np.array([[v], [0], [0]]))
         # u2=-k2.dot(x_vec2) + g2.dot(np.array([[delta], [0]]))
         Cl=0.5*u1+0.5*u2
