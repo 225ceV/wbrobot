@@ -2,7 +2,8 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="rosbot3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot
+  name="wbrobot">
   <link name="world_link" >
     <visual>
         <geometry>
@@ -12,7 +13,16 @@
         <material name="yellow">
             <color rgba="0.5 0.3 0 0.5"/>
         </material>
+        
     </visual>
+    <!--collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size = "1 1 0.01" />
+      </geometry>
+    </collision-->
   </link>
   <link
     name="base_link">
@@ -36,7 +46,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/base_link.STL" />
+          filename="package://robot_description/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -50,14 +60,14 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/base_link.STL" />
+          filename="package://robot_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
 
   <!--world_joint-->
   <joint name="world_joint" type="fixed">
-    <origin xyz="0 0 0.15"/>
+    <origin xyz="0 0 0.13" rpy="0 0 0"/>
     <parent link="world_link"/>
     <child link="base_link"/>
   </joint>
@@ -84,7 +94,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/datui1_Link.STL" />
+          filename="package://robot_description/meshes/datui1_Link.STL" />
       </geometry>
       <material
         name="red">
@@ -98,7 +108,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/datui1_Link.STL" />
+          filename="package://robot_description/meshes/datui1_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -107,7 +117,7 @@
     type="revolute">
     <origin
       xyz="-0.08 0 0"
-      rpy="-3.1416 0 3.1416" />
+      rpy="2.923 0 3.1416" />
     <parent
       link="base_link" />
     <child
@@ -142,7 +152,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/xiaotui1_Link.STL" />
+          filename="package://robot_description/meshes/xiaotui1_Link.STL" />
       </geometry>
       <material
         name="blue">
@@ -156,7 +166,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/xiaotui1_Link.STL" />
+          filename="package://robot_description/meshes/xiaotui1_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -200,7 +210,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/wheel1_Link.STL" />
+          filename="package://robot_description/meshes/wheel1_Link.STL" />
       </geometry>
       <material
         name="">
@@ -214,7 +224,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/wheel1_Link.STL" />
+          filename="package://robot_description/meshes/wheel1_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -230,6 +240,7 @@
       link="wheel1_Link" />
     <axis
       xyz="-1 0 0" />
+    <dynamics damping="0.05"/>
     <limit
       effort="200"
       velocity="20" />
@@ -256,7 +267,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/datui2_Link.STL" />
+          filename="package://robot_description/meshes/datui2_Link.STL" />
       </geometry>
       <material
         name="red">
@@ -270,7 +281,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/datui2_Link.STL" />
+          filename="package://robot_description/meshes/datui2_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -279,7 +290,7 @@
     type="revolute">
     <origin
       xyz="0.08 0 0"
-      rpy="0 0 0" />
+      rpy="0.218 0 0" />
     <parent
       link="base_link" />
     <child
@@ -314,7 +325,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/xiaotui2_Link.STL" />
+          filename="package://robot_description/meshes/xiaotui2_Link.STL" />
       </geometry>
       <material
         name="blue">
@@ -328,7 +339,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/xiaotui2_Link.STL" />
+          filename="package://robot_description/meshes/xiaotui2_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -372,7 +383,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/wheel2_Link.STL" />
+          filename="package://robot_description/meshes/wheel2_Link.STL" />
       </geometry>
       <material
         name="">
@@ -386,7 +397,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rosbot3/meshes/wheel2_Link.STL" />
+          filename="package://robot_description/meshes/wheel2_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -402,6 +413,7 @@
       link="wheel2_Link" />
     <axis
       xyz="1 0 0" />
+    <dynamics damping="0.05"/>
     <limit
       effort="200"
       velocity="20" />
@@ -443,10 +455,10 @@
   <transmission name="datui2_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="datui2_joint">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="$datui2_joint_motor">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -481,5 +493,120 @@
       <robotNamespace>/</robotNamespace>
     </plugin>
   </gazebo>
+  <gazebo reference="base_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>800</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>base_link</bodyName>
+        <updateRateHZ>800</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>base_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
 
+  <gazebo reference="wheel1_Link">
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+    <gazebo reference="wheel2_Link">
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="datui1_Link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="datui2_Link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="xiaotui1_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="xiaotui2_Link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+ <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo_link"/>
+  </joint>
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.1"/> 
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+   <!-- hokuyo -->
+  <gazebo reference="hokuyo_link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/laser/scan</topicName>
+        <frameName>hokuyo_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
 </robot>

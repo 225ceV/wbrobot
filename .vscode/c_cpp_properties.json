@@ -10,9 +10,12 @@
                 "/opt/ros/noetic/include/**",
                 "/home/jjk/wbrobot_ws/src/robot_control/include/**",
                 "/usr/include/**",
+                "/opt/ros/noetic/include",
                 "/opt/ros/noetic/include"
             ],
-            "name": "ROS"
+            "name": "ROS",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compilerPath": "/usr/bin/gcc-9"
         }
     ],
     "version": 4
