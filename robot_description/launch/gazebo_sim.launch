@@ -7,6 +7,7 @@
     
 <!--gazebo-->
     <include file="$(find robot_description)/launch/my_world.launch" />
+    <!--include file="$(find gazebo_ros)/launch/empty_world.launch"/-->
     <!--添加机器人模型-->
     <node name="model_gzb" pkg="gazebo_ros" type="spawn_model" 
     args="-urdf -model bot_model -param robot_description" />

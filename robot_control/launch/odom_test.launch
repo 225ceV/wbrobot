@@ -7,5 +7,9 @@
 <node name="multi_receive" pkg="robot_control" type="multi_receive.py"/>
 <node name="control" pkg="robot_control" type="lqr_control1.py" output="screen"/>
 <node name="odom" pkg="robot_control" type="odom_node"/>
+<!--rviz-->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+<!--node pkg="rviz" type="rviz" name="rviz"/-->
 
+<node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_control)/config/odom_test.rviz"/>
 </launch>

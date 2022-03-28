@@ -163,6 +163,11 @@ add_executable(
         odom_node src/odom_pub.cpp
 
 )
+add_executable(
+
+        fake_odom_node src/fake_odom.cpp
+
+)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -181,7 +186,9 @@ add_executable(
  target_link_libraries(odom_node
    ${catkin_LIBRARIES}
  )
-
+ target_link_libraries(fake_odom_node
+   ${catkin_LIBRARIES}
+ )
 #############
 ## Install ##
 #############

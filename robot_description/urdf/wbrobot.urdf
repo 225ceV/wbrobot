@@ -4,6 +4,13 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="wbrobot">
+  <link name="base_footprint"/>
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.57"/>
+    <parent link="world_link"/>
+    <child link="base_footprint"/>
+    
+  </joint>
   <link name="world_link" >
     <visual>
         <geometry>
@@ -65,10 +72,9 @@
     </collision>
   </link>
 
-  <!--world_joint-->
-  <joint name="world_joint" type="fixed">
-    <origin xyz="0 0 0.13" rpy="0 0 0"/>
-    <parent link="world_link"/>
+  <joint name="footprint" type="fixed">
+    <origin xyz="0 0 0.21" rpy="0 0 -1.57"/>
+    <parent link="base_footprint"/>
     <child link="base_link"/>
   </joint>
 
@@ -584,8 +590,8 @@
           <horizontal>
             <samples>720</samples>
             <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <min_angle>-3</min_angle>
+            <max_angle>3</max_angle>
           </horizontal>
         </scan>
         <range>
